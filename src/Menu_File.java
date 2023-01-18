@@ -1,18 +1,19 @@
 import java.awt.*;
 import java.io.BufferedReader;
-import java.io.File;
+import java.awt.print.*;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-public class Function_File {
+public class Menu_File {
 
     GUI gui;
     String fileName;
     String fileAddress;
-    public Function_File(GUI gui) {
+    public Menu_File(GUI gui) {
         this.gui = gui;
     }
 
+    // Open a new empty File
     public void newFile() {
 
         gui.textArea.setText("");
@@ -21,6 +22,7 @@ public class Function_File {
         fileAddress = null;
     }
 
+    // function to read a file that you opened in your computer
     public void openFile() {
 
         FileDialog fd = new FileDialog(gui.window, "Open", FileDialog.LOAD);
@@ -49,6 +51,7 @@ public class Function_File {
         }
     }
 
+    // Save your file
     public void saveFile() {
 
         if (fileName == null) {
@@ -66,6 +69,7 @@ public class Function_File {
         }
     }
 
+    // Save a new file in a new location
     public void saveAsFile() {
 
         FileDialog fd = new FileDialog(gui.window, "Save", FileDialog.SAVE);
@@ -88,7 +92,31 @@ public class Function_File {
         }
     }
 
+    // Exit the program
     public void exitApp() {
         System.exit(0);
+    }
+
+    // Print your text
+    public void print() {
+        PrinterJob job = PrinterJob.getPrinterJob();
+        job.setPrintable(new Printable() {
+            public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
+                if (pageIndex > 0) {
+                    return NO_SUCH_PAGE;
+                }
+                Graphics2D g2d = (Graphics2D) graphics;
+                g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
+//              getContentPane().printAll(graphics);
+                return PAGE_EXISTS;
+            }
+        });
+        if (job.printDialog()) {
+            try {
+                job.print();
+            } catch (PrinterException ex) {
+                // Handle print job exception
+            }
+        }
     }
 }

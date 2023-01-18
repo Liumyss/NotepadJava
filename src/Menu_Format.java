@@ -1,16 +1,17 @@
 import java.awt.*;
 
-public class Function_Format {
+public class Menu_Format {
 
     GUI gui;
     Font arial, comicSansMS, timesNewRoman;
     String selectedFont;
 
-    public Function_Format(GUI gui) {
+    public Menu_Format(GUI gui) {
 
         this.gui = gui;
     }
 
+    // To wrap or unwrap your text
     public void wordWrap() {
 
         if (!gui.wordWrapOn) {
@@ -26,6 +27,7 @@ public class Function_Format {
         }
     }
 
+    // Initialize the fonts added to the Notepad
     public void createFont(int fontSize) {
 
             arial = new Font("Arial", Font.PLAIN, fontSize);
@@ -35,6 +37,7 @@ public class Function_Format {
             setFont(selectedFont);
     }
 
+    // Set the selected font in your text area
     public void setFont(String font) {
 
         selectedFont = font;

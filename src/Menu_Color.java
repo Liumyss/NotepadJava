@@ -1,13 +1,14 @@
 import java.awt.*;
 
-public class Function_Color {
+public class Menu_Color {
 
     GUI gui;
 
-    public Function_Color(GUI gui) {
+    public Menu_Color(GUI gui) {
         this.gui = gui;
     }
 
+    // Function that will change the color of the background
     public void changeColor(String color) {
 
         switch (color) {

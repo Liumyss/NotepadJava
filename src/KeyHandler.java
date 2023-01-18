@@ -14,6 +14,8 @@ public class KeyHandler implements KeyListener {
 
     }
 
+
+    // Create new Keyboard Shortcuts for the Notepad
     @Override
     public void keyPressed(KeyEvent e) {
 
@@ -29,6 +31,9 @@ public class KeyHandler implements KeyListener {
         }
         if (e.isShiftDown() && e.getKeyCode() == KeyEvent.VK_C) {
             gui.menuColor.doClick();
+        }
+        if (e.isShiftDown() && e.getKeyCode() == KeyEvent.VK_H) {
+            gui.menuHelp.doClick();
         }
 
         // ACTIVATE FUNCTIONS OF menuFILE
@@ -54,6 +59,14 @@ public class KeyHandler implements KeyListener {
         }
         if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_R) {
             gui.edit.redo();
+        }
+        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_A) {
+            gui.edit.selectAll();
+        }
+
+        // ACTIVATE FUNCTIONS OF helpFile
+        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_F) {
+            gui.help.searchBar();
         }
     }
 
