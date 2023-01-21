@@ -1,14 +1,17 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+This program is a basic Notepad made with Java. The goal of this program is to show
+how Java can be useful to create simple frames and basic software like a Notepad for
+example. This program only focuses in basic user actions like editing a file, saving
+it and open a new one. The use can also use some keyboard shortcuts while using the
+software.
 
-{Provide a description of the software that you wrote to demonstrate the Java language.}
+This program is a great opportunity to show how Java can be simple to handle simple
+programs like this, but also lead to more complex programs. OOP (Object-Oriented
+Programming) is also a good part of Java to understand it better and make it more
+structured.
 
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/M1A4hc5RYQQ)
 
 # Development Environment
 
